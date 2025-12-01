@@ -7,6 +7,7 @@ Each article is written with a focus on clarity, depth, reproducibility, and aca
 
 ## 🗂 Blog Categories
 
+```text
 blogs/
 │
 ├── reverse-engineering/
@@ -26,8 +27,7 @@ blogs/
 │
 └── bde/
     └── Memory safety, exploit theory, blue-team visibility blogs
-
-
+```
 
 ----------
 
