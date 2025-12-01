@@ -3,27 +3,30 @@
 This repository contains my long-form technical blogs across multiple cybersecurity domains.  
 Each article is written with a focus on clarity, depth, reproducibility, and academic quality.
 
+---------------------
+
 ## 🗂 Blog Categories
 
 blogs/
 │
 ├── reverse-engineering/
-│ └── (Assembly, disassembly, binary structure, calling conventions…)
+│   └── Assembly, disassembly, binary internals, calling conventions
 │
 ├── malware/
-│ └── (Safe static/dynamic analysis, crackme writeups, behavior analysis…)
+│   └── Static/dynamic analysis, crackme writeups, behavior analysis
 │
 ├── kernel/
-│ └── (Memory management, syscalls, ASLR/KASLR, kernel modules…)
+│   └── Memory management, syscalls, ASLR/KASLR, kernel modules
 │
 ├── red-team/
-│ └── (AD internals, Kerberos, LL/OpSec theory, detection evasion…)
+│   └── AD internals, Kerberos, OpSec theory, detection evasion
 │
 ├── crtp/
-│ └── (CRTP labs → deep-dive theory blogs and detection notes…)
+│   └── CRTP labs → deep-dive theory blogs and detection notes
 │
 └── bde/
-└── (Memory safety, exploit theory, blue-side visibility blogs…)
+    └── Memory safety, exploit theory, blue-team visibility blogs
+
 
 ----------
 
