@@ -37,7 +37,7 @@ These blogs serve as:
 
 - A structured learning journal  
 - A reference for future research projects  
-- Evidence of technical depth for professors, labs, and PhD committees  
+- Evidence of technical depth  
 - High-quality content for my portfolio and GitHub profile  
 
 
