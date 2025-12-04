@@ -1,5 +1,0 @@
-index=wineventlog EventCode=1
-| eval SuspiciousParent=if(like(ParentImage,"%cmd.exe%") OR like(ParentImage,"%wmiprvse.exe%") OR like(ParentImage,"%rundll32.exe%"),1,0)
-| eval SuspiciousCommand=if(like(CommandLine,"%powershell.exe%") OR like(CommandLine,"%WindowStyle Hidden%"),1,0)
-| where SuspiciousParent=1 OR SuspiciousCommand=1
-| table _time, Image, ParentImage, CommandLine, ProcessId, ParentProcessId
