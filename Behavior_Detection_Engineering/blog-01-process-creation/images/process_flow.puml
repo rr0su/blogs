@@ -1,0 +1,14 @@
+@startuml
+title Windows Process Creation (Blog 1)
+
+actor User
+User -> CreateProcess : API call
+CreateProcess -> CreateProcessInternalW : internal
+CreateProcessInternalW -> NtCreateUserProcess : syscall
+NtCreateUserProcess -> Kernel : create EPROCESS + ETHREAD
+Kernel -> Loader : map PE image, resolve imports
+Loader -> Thread : start primary thread
+Thread -> Runtime : handoff to entrypoint
+Runtime -> Sysmon : Event ID 1 logged
+
+@enduml

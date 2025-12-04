@@ -1,0 +1,7 @@
+Sysmon
+| where EventID == 1
+| where ParentImage endswith "cmd.exe"
+   or ParentImage endswith "wmiprvse.exe"
+   or ParentImage endswith "rundll32.exe"
+| extend Suspicious = iff(CommandLine has "-WindowStyle Hidden" or CommandLine has "powershell.exe", "Yes", "No")
+| project TimeGenerated, Image, ParentImage, CommandLine, ProcessId, ParentProcessId, Suspicious
