@@ -25,7 +25,7 @@ blogs/
 ├── crtp/
 │   └── CRTP labs → deep-dive theory blogs and detection notes
 │
-└── bde/
+└── Behavior_Detection_Engineering/
     └── Memory safety, exploit theory, blue-team visibility blogs
 ```
 
