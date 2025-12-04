@@ -1,0 +1,26 @@
+title: Suspicious Process Creation (Abnormal Parent)
+id: 0001-blog1-process-creation
+description: Detects suspicious processes spawned by unusual parent processes or hidden/encoded command lines
+status: experimental
+author: Roshan
+logsource:
+  product: windows
+  service: sysmon
+detection:
+  selection:
+    EventID: 1
+    ParentImage|contains:
+      - 'cmd.exe'
+      - 'wmiprvse.exe'
+      - 'rundll32.exe'
+    CommandLine|contains:
+      - '-WindowStyle Hidden'
+      - 'powershell.exe'
+  condition: selection
+fields:
+  - Image
+  - ParentImage
+  - CommandLine
+  - ProcessId
+  - ParentProcessId
+level: high
