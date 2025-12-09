@@ -12,7 +12,10 @@ blogs/
 │
 ├── reverse-engineering/
 │   └── Assembly, disassembly, binary internals, calling conventions
-│
+|
+|── stack/
+│    └──blogs1-stack-frame
+|
 ├── malware/
 │   └── Static/dynamic analysis, crackme writeups, behavior analysis
 │
@@ -25,8 +28,8 @@ blogs/
 ├── crtp/
 │   └── CRTP labs → deep-dive theory blogs and detection notes
 │
-└── bde/
-    └── Memory safety, exploit theory, blue-team visibility blogs
+└── Behavior_Detection_Engineering/
+    └── blog-01-process-creation
 ```
 
 ----------
