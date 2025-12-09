@@ -1,37 +1,38 @@
-Blog 1: How SOC Analysts Actually Triage Alerts — A Real-World Mini Guide
+### 📝Blog 1: How SOC Analysts Actually Triage Alerts — A Real-World Mini Guide
 
 
-How SOC Analysts Actually Triage Alerts — A Real-World Mini Guide
+How SOC Analysts Actually Triage Alerts — A Real-World Mini Guide updatesupdates🚀
 Security Operations Center (SOC) work looks dramatic from the outside, but the real core of a Tier-1 analyst’s job is simple: triage alerts. Every day, analysts decide which alerts matter, which ones don’t, and which ones need escalation. This mini-guide breaks down how real SOC triage works — the exact workflow used in most companies, without buzzwords or overcomplication.
+🚀
 
 ------------
 
-1. What Is Triage?
+## ✨1. What Is Triage? ✨
 Triage is the process of quickly evaluating an alert to decide:
 
-. Is this real or a false positive?
+    . Is this real or a false positive?
 
-. How serious is it?
+    . How serious is it?
 
-. Does it require escalation?
+    . Does it require escalation?
 
-. What evidence do we have?
+    . What evidence do we have?
 
 Tier-1 analysts are not responsible for solving incidents. Their job is to filter, verify, and forward the important ones. Good triage means combining speed, accuracy, and clean notes.
 
 ------------
 
 
-2. Alert Severity Classification
+## 🆕2. Alert Severity Classification
 Most SOCs follow a simple severity model:
 
-  Low: Harmless activity, user mistakes, benign scans
+    Low: Harmless activity, user mistakes, benign scans
 
-  Medium: Suspicious behavior worth a small investigation
+    Medium: Suspicious behavior worth a small investigation
 
-  High: Likely malicious — needs escalation
-
-  Critical: Confirmed active attack (ransomware, privilege escalation, multiple hosts)
+    High: Likely malicious — needs escalation
+  
+    Critical: Confirmed active attack (ransomware, privilege escalation, multiple hosts)
 
 A key part of triage is rechecking severity because SIEM/EDR tools often mislabel alerts.
 
@@ -39,63 +40,63 @@ A key part of triage is rechecking severity because SIEM/EDR tools often mislabe
 ---
 
 
-3. Triage Workflow: Identify → Investigate → Decide → Document
+## 💡3. Triage Workflow: Identify → Investigate → Decide → Document
 This is the real daily workflow of Tier-1 analysts.
 
 
-Step 1 — Identify
+## Step 1 — Identify 👷
 Understand what triggered the alert.
 Check:
 
-   Alert name
+    Alert name
 
-   Source (EDR, SIEM, firewall, AV)
+    Source (EDR, SIEM, firewall, AV)
 
-   User involved
+    User involved
 
-   Host involved
+    Host involved
 
-   Timestamp
+    Timestamp
 
-   Rule/triggers
+    Rule/triggers
 
 This step usually takes 10–20 seconds.
 
 -----
 
-Step 2 — Investigate
+## Step 2 — Investigate 👷
 Collect basic evidence to understand context.
 
 Common checks:
 
-  Windows/Linux logs
+    Windows/Linux logs
 
-  Recent user activity
+    Recent user activity
 
-  Process tree
+    Process tree
 
-  Network connections
+    Network connections
 
-  Command executed (PowerShell/Bash)
+    Command executed (PowerShell/Bash)
+ 
+    Past alerts for same user/IP
 
-  Past alerts for same user/IP
-
-  Any matching IOCs
+    Any matching IOCs
 
 Tier-1 investigation is quick and structured, not deep forensics.
 
 ----
 
-Step 3 — Decide (False Positive or Suspicious?)
+## Step 3 — Decide (False Positive or Suspicious?) 🔥
 You decide based on evidence:
 
-  Does the behavior match common attack patterns?
+    Does the behavior match common attack patterns?
 
-  Is this normal for this user or machine?
+    Is this normal for this user or machine?
 
-  Is the command/process suspicious?
+     Is the command/process suspicious?
 
-  Any relevant IOC?
+     Any relevant IOC?
 
 
 Decision outcomes:
@@ -109,7 +110,7 @@ Decision outcomes:
 
 ----
 
-Step 4 — Document
+## 🔥Step 4 — Document
 Documentation is half of a SOC analyst’s job.
 A good ticket includes:
 
@@ -133,10 +134,10 @@ Clear notes help Tier-2 analysts respond faster.
 -------------
 
 
-4. Common Alert Types in Real SOC Environments
+## 📌4. Common Alert Types in Real SOC Environments
 
 
-1) Suspicious PowerShell
+1) Suspicious PowerShell 🛠
 Triggered when PowerShell runs encoded or unusual commands.
 Examples that raise flags:
 
@@ -149,7 +150,7 @@ Often many false positives because admins also use these commands.
 
 ----
 
-2) Failed Logons (Event 4625)
+2) Failed Logons (Event 4625) 🛠
 Repeated failed login attempts might indicate:
 
            brute-force attack
@@ -160,14 +161,14 @@ But 80% of the time, users just typed the wrong password.
  
 ----
 
-3) RDP Brute Force Attempts
+3) RDP Brute Force Attempts 🔧
 Many RDP failures from one IP or country.
 Could be malicious scanning or misconfigured automation.
 Tier-1 must verify before escalating.
 
 ---------
 
-4) Malware Detection Alerts
+4) Malware Detection Alerts ✏️
 Generated by antivirus/EDR.
 Usually High severity.
 Analyst checks:
@@ -185,7 +186,7 @@ If suspicious → escalate immediately.
 ------------
 
 
-5. How Escalation Works
+## 🕵️5. How Escalation Works
 Tier-1 analysts do not fix attacks.
 Their role is to forward important cases with clear evidence.
 
@@ -210,7 +211,7 @@ Tier-2 continues deeper investigation.
 
 
 
-6. Example Case: Suspicious PowerShell Execution
+## 🌀6. Example Case: Suspicious PowerShell Execution
 
 Below is a clean example that demonstrates triage without being too long.
 
@@ -223,11 +224,11 @@ Alert: PowerShell executed with Base64 encoded command
 Host: WIN-23A
 Severity: Medium
 
-Step 1 — Identify
-Alert triggered by EDR due to encoded command usage (-enc).
+Step 1 — Identify 🕵️
+    Alert triggered by EDR due to encoded command usage (-enc).
 
 
-Step 2 — Investigate
+Step 2 — Investigate 🕵️
 
          Sysmon shows PowerShell ran from winword.exe → highly unusual
 
@@ -238,12 +239,12 @@ Step 2 — Investigate
         No similar alerts in past for this host
 
 
-Step 3 — Decide
+Step 3 — Decide 🚨
 Behavior matches malicious execution pattern.
 Treat as real threat.
 
 
-Step 4 — Document & Escalate
+Step 4 — Document & Escalate 🗒
 Escalated to Tier-2 with logs, timeline, parent-process chain, and recommendation for threat-hunting across similar hosts.
 
 
@@ -271,7 +272,7 @@ soc-blogs/
 -----------------
 
 
-Conclusion
+## 🔚Conclusion
 
 Triage is the backbone of daily SOC work. When analysts quickly identify, investigate, decide, and document alerts, the entire security workflow becomes efficient. This guide captures the exact approach used by real SOC teams and provides a practical overview of Tier-1 responsibilities.
 
